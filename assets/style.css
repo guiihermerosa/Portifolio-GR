@@ -289,6 +289,51 @@ padding: 0;
   }
 }
 
+/* MEUS DIPROMAS E CURSOS */
+.education{
+  font-family: 'Berkshire Swash', cursive;; 
+
+ }
+  .education_content{
+    max-width: 50%;
+    font-family: 'poppins';
+     grid-template-columns: 1fr;
+     gap: 60px;
+     margin-top: 60px;
+     display: flex;
+     flex-direction:row;
+     align-items: center;
+     justify-content: center;
+    
+     div{ 
+      margin: 20px;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      padding: 30px;
+      background-color: #373738;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      transition:.5s;
+      cursor: pointer;
+      &:hover{
+       box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      }
+
+     }
+     p{
+      color: #707070;
+      font-size: 1rem;
+      margin-bottom: 10px;
+     }
+  }
+  .sobre_p{
+    color: #707070;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    margin-left: 10px;
+     text-align: center;
+  }
+
 
 /* RESPONSIVO */
 
@@ -420,7 +465,7 @@ footer {
 
 /* ================================================================= */
   /*Contacts */
-  
+
 .main-contact{
   transition:.5s;
   background-color: #111;
@@ -513,4 +558,86 @@ footer {
   cursor: pointer;
 }
 
+/* Projects */
 
+.Projects{
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
+  font-family: 'Poppins';
+  width: 100%;
+
+}
+
+.box1{
+  margin: 20px auto;
+   background-color: #ff7f00;
+  color: white;
+  max-width: 90%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition:.5s;
+  cursor: pointer;
+  text-align: center;
+  &:hover{
+    background-color: #ffab5d;
+  }
+  p{
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  img{
+    max-width: 60%;
+    height: 60%;
+    object-fit: cover;
+    
+  }
+}
+.box2{
+  margin: 19px auto;
+    width: 90%;
+  background-color: #1b1b1b;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition:.5s;
+  cursor: pointer;
+  &:hover{
+    background-color: #3f3f3f;
+  }
+  p{
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  img{
+    max-width: 60%;
+    height: 60%;
+    object-fit: cover;
+  }
+}
+.box3{
+  margin:  19px auto;
+  width: 90%;
+  background-color: #e91e63;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition:.5s;
+  cursor: pointer;
+  &:hover{
+    background-color: #f73978;
+  }
+  p{
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  img{
+    max-width: 60%;
+    height: 60%;
+    object-fit: cover;
+  }
+}
