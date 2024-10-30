@@ -361,7 +361,11 @@ padding: 0;
   .section-div img {
       display: none;
   }
-
+.box1 img{ 
+   width: auto !important;
+   height: auto;
+ 
+}
   .section-div {
       background-image: url(img/pessoa\ ilustrativa.png);
       background-repeat: no-repeat;
