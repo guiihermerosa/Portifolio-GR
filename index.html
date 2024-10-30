@@ -3,55 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/style.css">
-  <script  defer> document.addEventListener('DOMContentLoaded', (event) => {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navUl = document.querySelector('nav ul');
-    const navLinks = document.querySelectorAll('nav ul li a');
-  
-    menuToggle.addEventListener('click', () => {
-      navUl.classList.toggle('showing');
-    });
-  
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navUl.classList.remove('showing');
-      });
-    });
-  });</script>
-  <style>
-    .menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 30px; cursor: pointer; }
-    @media (max-width: 768px) {
-     nav ul { display: none;
-     flex-direction: column; 
-     width: 100%;
-     position: absolute;
-    border-radius: 4px;
-     text-align: center; 
-     background-color: #b3b3b3; 
-
-    } 
-    nav ul.showing { 
-      display: flex; 
-      left: 0;
-      right: 0;
-      width: 100%;
-      transition:.5s;
-      
-    } 
-    .menu-toggle { 
-      display: block;
-      color: #f7f7f7; 
-      font-size: 2rem;
-      cursor: pointer;
-    }
-     }
-  </style>
+  <link rel="stylesheet" href="./assets/style.css" >
+  <script  defer> 
+    document.addEventListener('DOMContentLoaded', (event) => { const menuToggle = document.querySelector('.menu-toggle'); const navUl = document.querySelector('nav ul'); const navLinks = document.querySelectorAll('nav ul li a'); menuToggle.addEventListener('click', () => { navUl.classList.toggle('showing'); }); navLinks.forEach(link => { link.addEventListener('click', () => { navUl.classList.remove('showing'); }); }); });
+  </script>
   <title>Portifolio | GR</title>
 </head>
 <body>
   <header>
-     <nav> 
+     <nav class="nav-header"> 
     <a href="index.html"><h1>GR</h1></a> <ul>
        <li><a href="#about">Sobre Mim</a></li> 
        <li><a href="./Projects.html">Projetos</a></li> 
@@ -140,13 +100,15 @@
     <div class="footer-logo">
       <a href="index.html"><h1>GR</h1></a>
     </div>
-    <nav class="footer-nav">
-      <ul>
+    <div class="nav-footer">
+    <nav class="footer-nav" >
+      <ul >
         <li><a href="#about">Sobre Mim</a></li>
         <li><a href="./Projects.html">Projetos</a></li>
         <li><a href="./Contact.html">Contato</a></li>
       </ul>
     </nav>
+    </div>
     <div class="footer-social">
       <p>Siga-me:</p>
       <a href="https://github.com/guiihermerosa" target="_blank">GitHub</a>

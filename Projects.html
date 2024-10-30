@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/style.css">
-  <script src="./assets/script.js" defer></script>
+  <script src="./assets/script.js" defer>
+    
+
+  </script>
   <style>  
   body{
     background-color: #000000;
@@ -16,19 +19,17 @@
   <title>Projects|GR </title>
 </head>
 <body>
+ 
   <header>
-    <nav>
-      <a href="index.html"><H1>GR</H1></a>
-  
-      <ul>
-          <li><a href="./index.html#About">Sobre Mim</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="./Contact.html">Contato</a></li>
-          <li><a href="https://github.com/guiihermerosa" target="_blank">GitHub</a></li>
-
-      </ul>
-    </nav>
-  </header>
+    <nav class="nav-header"> 
+   <a href="index.html"><h1>GR</h1></a> <ul>
+      <li><a href="#about">Sobre Mim</a></li> 
+      <li><a href="./Projects.html">Projetos</a></li> 
+   <li><a href="./Contact.html">Contato</a></li> 
+   <li><a href="https://github.com/guiihermerosa" target="_blank">GitHub</a></li> </ul> 
+   <button class="menu-toggle" aria-label="Open menu" id="menu-toggle">&#9776;</button> 
+ </nav> 
+ </header>
   <main class="Project">
     <div class="box1">
       <h2>OpineBem</h2>
@@ -71,5 +72,8 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => { const menuToggle = document.querySelector('.menu-toggle'); const navUl = document.querySelector('nav ul'); const navLinks = document.querySelectorAll('nav ul li a'); menuToggle.addEventListener('click', () => { navUl.classList.toggle('showing'); }); navLinks.forEach(link => { link.addEventListener('click', () => { navUl.classList.remove('showing'); }); }); });
+  </script>
   </body>
 </html> 
