@@ -4,32 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/style.css">
-  <script src="script.js" defer></script>
+  <script  defer> document.addEventListener('DOMContentLoaded', (event) => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navUl = document.querySelector('nav ul');
+    const navLinks = document.querySelectorAll('nav ul li a');
+  
+    menuToggle.addEventListener('click', () => {
+      navUl.classList.toggle('showing');
+    });
+  
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navUl.classList.remove('showing');
+      });
+    });
+  });</script>
+  <style>
+    .menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 30px; cursor: pointer; }
+    @media (max-width: 768px) {
+     nav ul { display: none;
+     flex-direction: column; 
+     width: 100%;
+     position: absolute;
+    border-radius: 4px;
+     text-align: center; 
+     background-color: #b3b3b3; 
+
+    } 
+    nav ul.showing { 
+      display: flex; 
+      left: 0;
+      right: 0;
+      width: 100%;
+      transition:.5s;
+      
+    } 
+    .menu-toggle { 
+      display: block;
+      color: #f7f7f7; 
+      font-size: 2rem;
+      cursor: pointer;
+    }
+     }
+  </style>
   <title>Portifolio | GR</title>
 </head>
 <body>
-    <header>
-      <nav>
-        <a href="index.html"><H1>GR</H1></a>
-    
-        <ul>
-            <li><a href="#about">Sobre Mim</a></li>
-            <li><a href="./Projects.html">Projetos</a></li>
-            <li><a href="./Contact.html">Contato</a></li>
-            <li><a href="https://github.com/guiihermerosa" target="_blank">GitHub</a></li>
-
-        </ul>
-      </nav>
-    </header>
+  <header>
+     <nav> 
+    <a href="index.html"><h1>GR</h1></a> <ul>
+       <li><a href="#about">Sobre Mim</a></li> 
+       <li><a href="./Projects.html">Projetos</a></li> 
+    <li><a href="./Contact.html">Contato</a></li> 
+    <li><a href="https://github.com/guiihermerosa" target="_blank">GitHub</a></li> </ul> 
+    <button class="menu-toggle" aria-label="Open menu" id="menu-toggle">&#9776;</button> 
+  </nav> 
+  </header>
 
     <section aria-label="seção curriculo dowload Guilherme" class="section-div">
       <div>
-          <h2> This is me!</h2>
+          <h2>This is me!</h2>
           <h2 class="digitando">Front End Developer and  Back End Developer</h2>
           <p>Guilherme é um adolescente brasileiro apaixonado por tecnologia.</p>
           <a href="./assets/Meu Curriculo.pdf" download>Dowload CV</a>
       </div>
-      <img src="" alt="ilustrativa imagem de uma pessoa">
+      <img src="./assets/imgs/Guilherme-2.jpg" alt="ilustrativa imagem de uma pessoa">
   </section>
   
 <main>
@@ -46,7 +85,7 @@
             <span></span>
         </div>
     </div>
-    <img src="assets/guilherme-brasil (2).jpeg" alt="imagem de uma pessoa ilustrativa">
+    <img src="./assets/imgs/Guilherme-1.jpg" alt="imagem de uma pessoa ilustrativa">
     <div class="sobre_conteudo">
         <div class="sobre_texto">
             <h1>I'm Dev Junior - Guilherme</h1>
