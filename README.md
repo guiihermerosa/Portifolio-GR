@@ -22,6 +22,6 @@ Este portfólio é uma vitrine dos projetos que desenvolvi ao longo da minha jor
 Para visualizar o portfólio, basta clonar este repositório e abrir o arquivo `index.html` em um navegador de sua preferência:
 
 ```bash
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
-cd nome-do-repositorio
+git clone https://github.com/guiihermerosa/Portifolio-GR.git
+cd Portifolio-GR
 
