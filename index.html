@@ -3,61 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/style.css" >
-  <script  defer> 
-    document.addEventListener('DOMContentLoaded', (event) => { const menuToggle = document.querySelector('.menu-toggle'); const navUl = document.querySelector('nav ul'); const navLinks = document.querySelectorAll('nav ul li a'); menuToggle.addEventListener('click', () => { navUl.classList.toggle('showing'); }); navLinks.forEach(link => { link.addEventListener('click', () => { navUl.classList.remove('showing'); }); }); });
+  <link rel="stylesheet" href="./assets/style.css">
+  <script defer>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navUl = document.querySelector('nav ul');
+      const navLinks = document.querySelectorAll('nav ul li a');
+      
+      menuToggle.addEventListener('click', () => {
+        navUl.classList.toggle('showing');
+      });
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navUl.classList.remove('showing');
+        });
+      });
+      
+      // Adicionando o IntersectionObserver para mostrar os itens ao rolar
+      const items = document.querySelectorAll('.item');
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          } else {
+            entry.target.classList.remove('visible');
+          }
+        });
+      }, { threshold: 0.4 }); // Quando 50% do item estiver visível
+
+      items.forEach(item => observer.observe(item));
+    });
   </script>
   <title>Portifolio | GR</title>
 </head>
 <body>
   <header>
-     <nav class="nav-header"> 
-    <a href="index.html"><h1>GR</h1></a> <ul>
-       <li><a href="#about">Sobre Mim</a></li> 
-       <li><a href="./Projects.html">Projetos</a></li> 
-    <li><a href="./Contact.html">Contato</a></li> 
-    
-    <button class="menu-toggle" aria-label="Open menu" id="menu-toggle">&#9776;</button> 
-  </nav> 
+    <nav class="nav-header">
+      <a href="index.html"><h1>GR</h1></a>
+      <ul>
+        <li><a href="#about">Sobre Mim</a></li>
+        <li><a href="./Projects.html">Projetos</a></li>
+        <li><a href="./Contact.html">Contato</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Open menu" id="menu-toggle">&#9776;</button>
+    </nav>
   </header>
 
-    <section aria-label="seção curriculo dowload Guilherme" class="section-div">
-      <div>
-          <h2>This is me!</h2>
-          <h2 class="digitando">Front End Developer and  Back End Developer</h2>
-          <p>Guilherme é um adolescente brasileiro apaixonado por tecnologia.</p>
-          <a href="./assets/Meu Curriculo.pdf" download>Download CV</a>
-      </div>
-      <img src="./assets/imgs/Guilherme-2.jpg" alt="ilustrativa imagem de uma pessoa">
+  <section aria-label="seção curriculo dowload Guilherme" class="section-div item">
+    <div>
+      <h2>This is me!</h2>
+      <h2 class="digitando">Front End Developer and  Back End Developer</h2>
+      <p>Guilherme é um adolescente brasileiro apaixonado por tecnologia.</p>
+      <a href="./assets/Meu Curriculo.pdf" download>Download CV</a>
+    </div>
+    <img src="./assets/imgs/Guilherme-2.jpg" alt="ilustrativa imagem de uma pessoa">
   </section>
   
-<main>
-  <div class="faixa2">
-
-  </div>
-  <article aria-label="seção sobre mim" class="sobre">
-    <div class="sobre_titulo">
+  <main>
+    <div class="faixa2"></div>
+    
+    <article aria-label="seção sobre mim" class="sobre">
+      <div class="sobre_titulo item">
         <h1 id="about">About Me</h1>
         <p>Perfil Professional - There is All About me</p>
         <div aria-label="Seção apenas de ilustrações de botões">
-            <span></span>
-            <span></span>
-            <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-    </div>
-    <img src="./assets/imgs/Guilherme-1.jpg" alt="imagem de uma pessoa ilustrativa">
-    <div class="sobre_conteudo">
+      </div>
+      <img src="./assets/imgs/Guilherme-1.jpg" alt="imagem de uma pessoa ilustrativa">
+      <div class="sobre_conteudo">
         <div class="sobre_texto">
-            <h1>I'm Dev Junior - Guilherme</h1>
-            <p>Quem é Guilherme? Guilherme é um adolescente como tantos outros espalhados pelo Brasil. No entanto, ele se destaca por vir de uma família muito envolvida com a tecnologia. Seu pai é proprietário de uma empresa de informática, o que o proporcionou um ambiente propício para explorar o mundo dos eletrônicos desde cedo.
-                <br>
-                <br>
-                Desde sua infância, Guilherme sempre demonstrou curiosidade e interesse em compreender o funcionamento dos dispositivos eletrônicos que havia em casa. Fascinado por suas engrenagens internas, frequentemente desmontava aparelhos para explorar e aprender mais sobre suas estruturas. Essa paixão pela tecnologia e o desejo de entender os segredos por trás dos dispositivos eletrônicos moldaram sua visão de mundo e pavimentaram seu caminho em direção a uma promissora jornada
-                <br>
-                <br>
-                Conforme Guilherme crescia, sua sede por conhecimento tecnológico também se expandia. Ele começou a dedicar horas de estudo autodidata, pesquisando online e lendo livros relacionados à eletrônica, programação e desenvolvimento de software. Cada conquista nesse campo reforçava sua motivação para continuar se aprofundando na área.
-            </p>
-            
+          <h1>I'm Dev Junior - Guilherme</h1>
+          <p>Quem é Guilherme? Guilherme é um adolescente como tantos outros espalhados pelo Brasil...</p>
         </div>
         <div class="sobre_info">
           <p>>Date of birth: 22 mar 2006</p>
@@ -67,59 +88,54 @@
           <p>Nationality: Brazilian</p>
           <p>Phone: +55 (18)99815-9520</p>
           <p>Email: guiespuletacm@icloud.com</p>
-          
+        </div>
       </div>
-  </div>
-  
-</article>
-<span></span>
+    </article>
 
-<h2 class="education">EDUCAÇÃO</h2>
-<p class="sobre_p">Perfil Professional - There is All Education</p>
-<div aria-label="Seção apenas de ilustrações de botões">
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
-<div class="education_content">
-    <div>
+    <h2 class="education item">EDUCAÇÃO</h2>
+    <p class="sobre_p">Perfil Professional - There is All Education</p>
+    <div aria-label="Seção apenas de ilustrações de botões">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="education_content">
+      <div class="item">
         <span>2021 - 2023</span>
         <h3>technician - Etec Professor Luiz Pires Barbosa</h3>
-        <p>A ETEC Professor Luiz Pires Barbosa foi criada para proporcionar um ambiente onde os alunos possam crescer, aprender e se desenvolver continuamente. Com uma abordagem de ensino distinta e uma equipe dedicada, a escola promove o desenvolvimento acadêmico e pessoal dos estudantes.</p>
-    </div>
-   
-    <div>
+        <p>A ETEC Professor Luiz Pires Barbosa foi criada para proporcionar um ambiente...</p>
+      </div>
+      <div class="item">
         <span>2024 - 2027</span>
         <h3>bachelor - computer science</h3>
-        <p>A Fundação Educacional do Município de Assis (FEMA) é uma entidade pública de direito privado criada na década de 1980 pela prefeitura de Assis. Ela é responsável pelo Instituto Municipal de Ensino Superior de Assis, que é uma das principais instituições de ensino superior na região do Vale do Paranapanema. A FEMA oferece 12 cursos de graduação, 4 de pós-graduação e diversos projetos de extensão.</p>
+        <p>A Fundação Educacional do Município de Assis (FEMA) é uma entidade pública...</p>
+      </div>
     </div>
+  </main>
 
-</main>
-<footer>
-  <div class="footer-container">
-    <div class="footer-logo">
-      <a href="index.html"><h1>GR</h1></a>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <a href="index.html"><h1>GR</h1></a>
+      </div>
+      <div class="nav-footer">
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="#about">Sobre Mim</a></li>
+            <li><a href="./Projects.html">Projetos</a></li>
+            <li><a href="./Contact.html">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-social">
+        <p>Siga-me:</p>
+        <a href="https://github.com/guiihermerosa" target="_blank">GitHub</a>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2024 GR. Todos os direitos reservados.</p>
+      </div>
     </div>
-    <div class="nav-footer">
-    <nav class="footer-nav" >
-      <ul >
-        <li><a href="#about">Sobre Mim</a></li>
-        <li><a href="./Projects.html">Projetos</a></li>
-        <li><a href="./Contact.html">Contato</a></li>
-      </ul>
-    </nav>
-    </div>
-    <div class="footer-social">
-      <p>Siga-me:</p>
-      <a href="https://github.com/guiihermerosa" target="_blank">GitHub</a>
-      <!-- Adicione links para outras redes sociais aqui -->
-    </div>
-    <div class="footer-info">
-      <p>&copy; 2024 GR. Todos os direitos reservados.</p>
-    </div>
-  </div>
-</footer>
-
+  </footer>
 
 </body>
 </html>

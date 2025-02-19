@@ -3,6 +3,20 @@
   box-sizing: border-box;
 
 }
+/* Animaçao */
+/* Adicione no seu arquivo style.css */
+
+.item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /*HEADER SECAO*/
 header{
